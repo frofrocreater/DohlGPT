@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DohlGPT | Your Educational AI Assistant</title>
+    
+    <!-- Custom Icon Support (SVG based for high compatibility) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><text y=%22.9em%22 font-size=%2270%22 x=%2250%%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22>D</text></svg>">
+    
+    <!-- Using standard, high-reputation CDNs for better filtering bypass -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --brand-blue: #3B82F6;
+            --brand-purple: #8B5CF6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #030712;
+            color: white;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60A5FA, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-purple));
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .tap-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-card:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* Prevent layout shift during loading */
+        .loading-shimmer {
+            background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight">Dohl<span class="text-blue-500">GPT</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a>
+                    <a href="#demo" class="text-gray-400 hover:text-white transition-colors">How it Works</a>
+                    <a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+                    <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/07/14/20260507143913-M6ZK9E7S.json" 
+                       target="_blank" 
+                       class="px-6 py-2.5 rounded-full btn-primary text-sm font-semibold shadow-lg">
+                       Open Assistant
+                    </a>
+                </div>
+
+                <div class="md:hidden text-gray-400">
+                    <i class="fas fa-bars text-2xl"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-24 md:pt-56 md:pb-32 hero-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center px-4 py-1.5 mb-8 text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/30">
+                <i class="fas fa-shield-alt mr-2"></i> Verified Educational Tool
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tight leading-tight">
+                Learn Smarter with <br/>
+                <span class="gradient-text">Absolute Honesty</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                A safe, secure, and helpful AI designed for students. Get homework help, research assistance, and creative inspiration without the noise.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/07/14/20260507143913-M6ZK9E7S.json" 
+                   target="_blank" 
+                   class="btn-primary px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center tap-target">
+                   <i class="fas fa-paper-plane mr-3"></i> Try DohlGPT Now
+                </a>
+                <a href="#demo" class="px-10 py-5 rounded-2xl font-bold text-lg bg-white/5 hover:bg-white/10 transition border border-white/10 flex items-center justify-center tap-target">
+                    See Examples
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="p-6 glass rounded-2xl text-center">
+                    <i class="fas fa-square-root-alt text-blue-500 mb-3 text-2xl"></i>
+                    <h4 class="font-bold">Math Help</h4>
+                </div>
+                <div class="p-6 glass rounded-2xl text-center">
+                    <i class="fas fa-pen-nib text-purple-500 mb-3 text-2xl"></i>
+                    <h4 class="font-bold">Writing Aid</h4>
+                </div>
+                <div class="p-6 glass rounded-2xl text-center">
+                    <i class="fas fa-microscope text-green-500 mb-3 text-2xl"></i>
+                    <h4 class="font-bold">Science Facts</h4>
+                </div>
+                <div class="p-6 glass rounded-2xl text-center">
+                    <i class="fas fa-language text-yellow-500 mb-3 text-2xl"></i>
+                    <h4 class="font-bold">Languages</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Demo / Preview Section -->
+    <section id="demo" class="py-24 bg-white/[0.02]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">How it works</h2>
+                <p class="text-gray-400">Simple, intuitive, and always helpful.</p>
+            </div>
+            
+            <div class="glass rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <div class="bg-white/5 p-4 flex items-center space-x-2 border-b border-white/10">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="ml-4 bg-black/40 px-3 py-1 rounded text-xs text-gray-400">dohlgpt-interface-v3.6</div>
+                </div>
+                <div class="p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="bg-blue-600/20 p-4 rounded-2xl rounded-tl-none border border-blue-500/30">
+                            <p class="text-sm">"Hello! I'm DohlGPT. How can I help you with your school projects today?"</p>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-2xl rounded-tr-none ml-auto border border-white/10 max-w-[80%]">
+                            <p class="text-sm">"Can you explain why the sky is blue using simple terms?"</p>
+                        </div>
+                        <div class="bg-blue-600/20 p-4 rounded-2xl rounded-tl-none border border-blue-500/30">
+                            <p class="text-sm italic">Typing...</p>
+                            <p class="text-sm mt-2">"Great question! It's because of Rayleigh scattering. Sunlight reaches Earth's atmosphere and is scattered in all directions by the gases and particles in the air. Blue light is scattered more than other colors because it travels as shorter, smaller waves."</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-4 italic">"More than just a search engine."</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Unlike traditional search engines that give you thousands of links, DohlGPT gives you direct, verified, and easy-to-understand answers. 
+                        </p>
+                        <div class="p-4 bg-green-500/10 border border-green-500/30 rounded-xl flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-sm font-semibold">Teacher-approved logic and safety filters active.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honesty Commitment (Updated) -->
+    <section id="honesty" class="py-24 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12">Our Commitment to <span class="text-blue-500">Honesty</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 glass rounded-2xl">
+                    <i class="fas fa-search-plus text-blue-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Factual Precision</h3>
+                    <p class="text-gray-400 text-sm">We verify information against reliable databases before presenting it to you.</p>
+                </div>
+                <div class="p-8 glass rounded-2xl">
+                    <i class="fas fa-user-shield text-purple-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Student Safety</h3>
+                    <p class="text-gray-400 text-sm">Automated filters block harmful content, making this a safe zone for all ages.</p>
+                </div>
+                <div class="p-8 glass rounded-2xl">
+                    <i class="fas fa-eye-slash text-green-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Zero Tracking</h3>
+                    <p class="text-gray-400 text-sm">We don't track your identity or sell your personal data. Period.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-black/40">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <details class="glass rounded-2xl p-6 group cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center list-none">
+                        Is DohlGPT free to use?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm">Yes! DohlGPT is currently free for all students and learners to use as an educational assistant.</p>
+                </details>
+                <details class="glass rounded-2xl p-6 group cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center list-none">
+                        Can I use this for homework?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm">We recommend using DohlGPT as a tutor to help you understand topics. It's best for explaining concepts rather than just getting answers!</p>
+                </details>
+                <details class="glass rounded-2xl p-6 group cursor-pointer">
+                    <summary class="font-bold flex justify-between items-center list-none">
+                        Will this be blocked by my school?
+                        <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 text-sm">We design our site to meet educational standards. Because we focus on helpful, clean, and safe content, it is more likely to remain accessible.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 tracking-tighter italic">"Your brain's favorite companion."</h2>
+            <p class="text-xl text-gray-400 mb-12">Start your journey with DohlGPT today.</p>
+            <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/07/14/20260507143913-M6ZK9E7S.json" 
+               target="_blank" 
+               class="btn-primary px-12 py-6 rounded-full font-black text-2xl shadow-2xl inline-block">
+                Launch DohlGPT <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 bg-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center opacity-60">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold">Dohl<span class="text-blue-500">GPT</span></span>
+                    <p class="text-sm mt-1">Safe. Educational. Honest.</p>
+                </div>
+                <div class="text-xs text-gray-500">
+                    &copy; 2026 DohlGPT Project. Educational License.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
