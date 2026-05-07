@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DohlGPT | Your Educational AI Assistant</title>
+    <title>DohlGPT | Honest & Educational AI</title>
     
     <!-- Custom Icon Support (SVG based for high compatibility) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><text y=%22.9em%22 font-size=%2270%22 x=%2250%%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22>D</text></svg>">
     
-    <!-- Using standard, high-reputation CDNs for better filtering bypass -->
+    <!-- Standard CDNs for better filtering bypass -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
@@ -55,9 +55,15 @@
             filter: brightness(1.1);
         }
 
-        .tap-target {
-            min-height: 44px;
-            min-width: 44px;
+        .beta-tag {
+            background: linear-gradient(90deg, #F59E0B, #D97706);
+            color: black;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 900;
+            vertical-align: middle;
+            margin-left: 4px;
         }
 
         .feature-card {
@@ -67,18 +73,6 @@
         .feature-card:hover {
             transform: scale(1.02);
             background: rgba(255, 255, 255, 0.06);
-        }
-
-        /* Prevent layout shift during loading */
-        .loading-shimmer {
-            background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
         }
     </style>
 </head>
@@ -92,12 +86,12 @@
                     <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
                         <i class="fas fa-graduation-cap text-white text-xl"></i>
                     </div>
-                    <span class="text-2xl font-bold tracking-tight">Dohl<span class="text-blue-500">GPT</span></span>
+                    <span class="text-2xl font-bold tracking-tight">Dohl<span class="text-blue-500">GPT</span><span class="beta-tag uppercase">Beta</span></span>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a>
-                    <a href="#demo" class="text-gray-400 hover:text-white transition-colors">How it Works</a>
+                    <a href="#honesty" class="text-gray-400 hover:text-white transition-colors">Honesty</a>
+                    <a href="#origin" class="text-gray-400 hover:text-white transition-colors">Our Name</a>
                     <a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
                     <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/07/14/20260507143913-M6ZK9E7S.json" 
                        target="_blank" 
@@ -113,175 +107,160 @@
         </div>
     </nav>
 
+    <!-- Beta Banner -->
+    <div class="fixed bottom-0 w-full z-40 bg-amber-500/90 backdrop-blur text-black py-2 px-4 text-center text-sm font-bold border-t border-amber-600">
+        <i class="fas fa-tools mr-2"></i> DohlGPT is currently in <span class="underline">Public Beta</span>. We are still in progress and refining our intelligence daily.
+    </div>
+
     <!-- Hero Section -->
     <section class="relative pt-40 pb-24 md:pt-56 md:pb-32 hero-glow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="inline-flex items-center px-4 py-1.5 mb-8 text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/30">
-                <i class="fas fa-shield-alt mr-2"></i> Verified Educational Tool
+                <i class="fas fa-shield-alt mr-2"></i> 100% Honest & Transparent AI
             </div>
             <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tight leading-tight">
-                Learn Smarter with <br/>
-                <span class="gradient-text">Absolute Honesty</span>
+                Honest Learning <br/>
+                <span class="gradient-text">In Progress.</span>
             </h1>
             <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-                A safe, secure, and helpful AI designed for students. Get homework help, research assistance, and creative inspiration without the noise.
+                DohlGPT is an evolving educational tool. We believe in total honesty: about the facts we provide, how we protect your data, and where we are in our development journey.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/07/14/20260507143913-M6ZK9E7S.json" 
                    target="_blank" 
                    class="btn-primary px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center tap-target">
-                   <i class="fas fa-paper-plane mr-3"></i> Try DohlGPT Now
+                   <i class="fas fa-paper-plane mr-3"></i> Start Chatting (Beta)
                 </a>
-                <a href="#demo" class="px-10 py-5 rounded-2xl font-bold text-lg bg-white/5 hover:bg-white/10 transition border border-white/10 flex items-center justify-center tap-target">
-                    See Examples
+                <a href="#origin" class="px-10 py-5 rounded-2xl font-bold text-lg bg-white/5 hover:bg-white/10 transition border border-white/10 flex items-center justify-center tap-target">
+                    The Dohl Origin
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Use Cases Grid -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="p-6 glass rounded-2xl text-center">
-                    <i class="fas fa-square-root-alt text-blue-500 mb-3 text-2xl"></i>
-                    <h4 class="font-bold">Math Help</h4>
-                </div>
-                <div class="p-6 glass rounded-2xl text-center">
-                    <i class="fas fa-pen-nib text-purple-500 mb-3 text-2xl"></i>
-                    <h4 class="font-bold">Writing Aid</h4>
-                </div>
-                <div class="p-6 glass rounded-2xl text-center">
-                    <i class="fas fa-microscope text-green-500 mb-3 text-2xl"></i>
-                    <h4 class="font-bold">Science Facts</h4>
-                </div>
-                <div class="p-6 glass rounded-2xl text-center">
-                    <i class="fas fa-language text-yellow-500 mb-3 text-2xl"></i>
-                    <h4 class="font-bold">Languages</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visual Demo / Preview Section -->
-    <section id="demo" class="py-24 bg-white/[0.02]">
+    <!-- Honesty Section -->
+    <section id="honesty" class="py-24 border-y border-white/5 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">How it works</h2>
-                <p class="text-gray-400">Simple, intuitive, and always helpful.</p>
+                <h2 class="text-4xl font-bold mb-4">The DohlGPT <span class="text-blue-500">Honesty Code</span></h2>
+                <p class="text-gray-400">We don't hide behind algorithms. Here is the truth.</p>
             </div>
             
-            <div class="glass rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <div class="bg-white/5 p-4 flex items-center space-x-2 border-b border-white/10">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    <div class="ml-4 bg-black/40 px-3 py-1 rounded text-xs text-gray-400">dohlgpt-interface-v3.6</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 glass rounded-3xl">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-blue-400">
+                        <i class="fas fa-exclamation-triangle mr-3"></i> We Are Still Learning
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        As a Beta project, DohlGPT can sometimes make mistakes. We are honest about our limits: if we aren't sure about an answer, we'll tell you rather than making something up.
+                    </p>
                 </div>
-                <div class="p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <div class="bg-blue-600/20 p-4 rounded-2xl rounded-tl-none border border-blue-500/30">
-                            <p class="text-sm">"Hello! I'm DohlGPT. How can I help you with your school projects today?"</p>
-                        </div>
-                        <div class="bg-white/5 p-4 rounded-2xl rounded-tr-none ml-auto border border-white/10 max-w-[80%]">
-                            <p class="text-sm">"Can you explain why the sky is blue using simple terms?"</p>
-                        </div>
-                        <div class="bg-blue-600/20 p-4 rounded-2xl rounded-tl-none border border-blue-500/30">
-                            <p class="text-sm italic">Typing...</p>
-                            <p class="text-sm mt-2">"Great question! It's because of Rayleigh scattering. Sunlight reaches Earth's atmosphere and is scattered in all directions by the gases and particles in the air. Blue light is scattered more than other colors because it travels as shorter, smaller waves."</p>
+                <div class="p-8 glass rounded-3xl">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-purple-400">
+                        <i class="fas fa-lock mr-3"></i> Total Privacy
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Honesty starts with your data. We do not sell your personal information or chat logs to third parties. Your curiosity is your business, not a product.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Section -->
+    <section id="origin" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="glass p-1 rounded-3xl transform -rotate-2">
+                        <div class="bg-blue-600/20 p-8 rounded-[22px] border border-blue-500/30">
+                            <h3 class="text-3xl font-bold mb-6">Why the name "Dohl"?</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                                Being 100% honest: The inspiration for the name <strong>Dohl</strong> comes from the character <strong>Doll</strong> in the animated show <em>Murder Drones</em>. 
+                            </p>
+                            <p class="text-gray-300 text-lg leading-relaxed">
+                                We loved the unique sound of the name and wanted to create a helpful AI companion with that same memorable energy. By changing the spelling to <strong>Dohl</strong>, we've created a version that is focused on being a loyal, intelligent, and educational "Pack Leader" for your information needs.
+                            </p>
                         </div>
                     </div>
-                    <div class="flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold mb-4 italic">"More than just a search engine."</h3>
-                        <p class="text-gray-400 mb-6 leading-relaxed">
-                            Unlike traditional search engines that give you thousands of links, DohlGPT gives you direct, verified, and easy-to-understand answers. 
-                        </p>
-                        <div class="p-4 bg-green-500/10 border border-green-500/30 rounded-xl flex items-center">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            <span class="text-sm font-semibold">Teacher-approved logic and safety filters active.</span>
-                        </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-4xl font-bold mb-6 italic">A Memorable Identity.</h2>
+                    <p class="text-gray-400 text-xl leading-relaxed">
+                        We believe in being transparent about our inspirations. Choosing a name from a show we enjoy was our way of making the project personal and fun, while building a tool that is serious about education.
+                    </p>
+                    <div class="mt-8 flex items-center space-x-4">
+                        <div class="h-1 w-20 bg-blue-500 rounded-full"></div>
+                        <span class="text-blue-400 font-bold tracking-widest uppercase text-sm">Honesty & Inspiration</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Honesty Commitment (Updated) -->
-    <section id="honesty" class="py-24 border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-12">Our Commitment to <span class="text-blue-500">Honesty</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 glass rounded-2xl">
-                    <i class="fas fa-search-plus text-blue-400 text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Factual Precision</h3>
-                    <p class="text-gray-400 text-sm">We verify information against reliable databases before presenting it to you.</p>
+    <!-- Beta Roadmap -->
+    <section class="py-24 bg-black/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Project Roadmap <span class="text-xs text-amber-500 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20 ml-2">IN PROGRESS</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 opacity-80">
+                <div class="p-6 border border-white/10 rounded-2xl bg-white/5">
+                    <span class="text-blue-500 font-bold">PHASE 1</span>
+                    <h4 class="font-bold mt-2">Public Beta Launch</h4>
+                    <p class="text-sm text-gray-500 mt-2">Open access to our core chat engine for students worldwide. (COMPLETED)</p>
                 </div>
-                <div class="p-8 glass rounded-2xl">
-                    <i class="fas fa-user-shield text-purple-400 text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Student Safety</h3>
-                    <p class="text-gray-400 text-sm">Automated filters block harmful content, making this a safe zone for all ages.</p>
+                <div class="p-6 border border-blue-500/30 rounded-2xl bg-blue-500/5">
+                    <span class="text-amber-500 font-bold">PHASE 2</span>
+                    <h4 class="font-bold mt-2">Context Refining</h4>
+                    <p class="text-sm text-gray-400 mt-2">Improving memory and factual verification systems. (ACTIVE)</p>
                 </div>
-                <div class="p-8 glass rounded-2xl">
-                    <i class="fas fa-eye-slash text-green-400 text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Zero Tracking</h3>
-                    <p class="text-gray-400 text-sm">We don't track your identity or sell your personal data. Period.</p>
+                <div class="p-6 border border-white/10 rounded-2xl bg-white/5">
+                    <span class="text-gray-600 font-bold">PHASE 3</span>
+                    <h4 class="font-bold mt-2">Feature Expansion</h4>
+                    <p class="text-sm text-gray-500 mt-2">Adding voice interactions and document scanning. (COMING SOON)</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-black/40">
+    <section id="faq" class="py-24">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <h2 class="text-3xl font-bold mb-12 text-center">Transparent Answers</h2>
             <div class="space-y-6">
                 <details class="glass rounded-2xl p-6 group cursor-pointer">
                     <summary class="font-bold flex justify-between items-center list-none">
-                        Is DohlGPT free to use?
+                        Is DohlGPT completely honest?
                         <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="mt-4 text-gray-400 text-sm">Yes! DohlGPT is currently free for all students and learners to use as an educational assistant.</p>
+                    <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Yes. Being honest means telling you the truth even when it's not perfect. If DohlGPT makes a mistake or doesn't know an answer, we encourage users to report it so we can fix it. We are committed to factual growth.
+                    </p>
                 </details>
                 <details class="glass rounded-2xl p-6 group cursor-pointer">
                     <summary class="font-bold flex justify-between items-center list-none">
-                        Can I use this for homework?
+                        What does "Beta" mean?
                         <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="mt-4 text-gray-400 text-sm">We recommend using DohlGPT as a tutor to help you understand topics. It's best for explaining concepts rather than just getting answers!</p>
-                </details>
-                <details class="glass rounded-2xl p-6 group cursor-pointer">
-                    <summary class="font-bold flex justify-between items-center list-none">
-                        Will this be blocked by my school?
-                        <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="mt-4 text-gray-400 text-sm">We design our site to meet educational standards. Because we focus on helpful, clean, and safe content, it is more likely to remain accessible.</p>
+                    <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Beta means we are still in a testing phase. We are sharing DohlGPT with the public early so we can see how you use it and improve it based on real student needs.
+                    </p>
                 </details>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="py-32 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 class="text-4xl md:text-6xl font-bold mb-8 tracking-tighter italic">"Your brain's favorite companion."</h2>
-            <p class="text-xl text-gray-400 mb-12">Start your journey with DohlGPT today.</p>
-            <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/05/07/14/20260507143913-M6ZK9E7S.json" 
-               target="_blank" 
-               class="btn-primary px-12 py-6 rounded-full font-black text-2xl shadow-2xl inline-block">
-                Launch DohlGPT <i class="fas fa-arrow-right ml-3"></i>
-            </a>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-white/5 bg-black/20">
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 bg-black/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
             <div class="flex flex-col md:flex-row justify-between items-center opacity-60">
                 <div class="mb-6 md:mb-0">
                     <span class="text-xl font-bold">Dohl<span class="text-blue-500">GPT</span></span>
-                    <p class="text-sm mt-1">Safe. Educational. Honest.</p>
+                    <p class="text-sm mt-1">An Honest Beta Project.</p>
                 </div>
                 <div class="text-xs text-gray-500">
-                    &copy; 2026 DohlGPT Project. Educational License.
+                    &copy; 2026 DohlGPT AI Project. Still in development.
                 </div>
             </div>
         </div>
